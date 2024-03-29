@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>E04 Homework</title>
+    <style>
+        #fridgeContainer {
+            position: relative;
+            min-width: 450px;
+            min-height: 450px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #browser {
+            position: absolute;
+            border: 5px solid black;
+            background-color: grey;
+            width: 100px;
+            top: 220px;
+            left: 170px;
+            cursor: default;
+        }
+
+        #clock {
+            position: absolute;
+            border: 5px solid black;
+            background-color: grey;
+            top: 90px;
+            left: 240px;
+            cursor: default;
+        }
+
+        #temperature {
+            position: absolute;
+            border: 5px solid black;
+            background-color: grey;
+            top: 120px;
+            left: 240px;
+            cursor: default;
+        }
+
+        #onOff {
+            position: absolute;
+            border: 5px solid firebrick;
+            background-color: grey;
+            top: 90px;
+            left: 150px;
+            cursor: pointer;
+        }
+
+        #openedFridge {
+            position: absolute;
+            cursor: pointer;
+            display: none;
+            width: 170px;
+            length: 400px;
+            top: 240px;
+            left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <header>Fridge -- Click anywhere on the fridge to open/ close it!</header>
+    </h1>
+    <div id="fridgeContainer">
+        <img height="100%" width="100%" onclick="toggleFridge()"
+            src="https://cdn.vectorstock.com/i/preview-1x/33/45/open-fridge-cartoon-vector-48493345.jpg"
+            alt="My Fridge">
+        <button id="onOff" onclick="togglePower()">Turn Off</button>
+        <span id="clock"></span>
+        <span id="temperature">
+            42&deg;</span>
+        <img id="browser"
+            src="https://static.vecteezy.com/system/resources/thumbnails/014/676/319/small/browser-window-icon-cartoon-style-vector.jpg"
+            alt="browser">
+    </div>
+    <img id="openedFridge" onclick="toggleFridge()"
+        src="https://img.freepik.com/free-vector/opened-refrigerator-with-food-inside_1308-100885.jpg?size=626&ext=jpg&ga=GA1.1.1395880969.1709337600&semt=ais"
+        alt="Opened Fridge">
+    <hr>
+    <footer>
+        &copy; Patrick Tyler, 02-19-2024
+    </footer>
+</body>
+<script>
+    // options which format the time when interacting with js's time api
+    const timeOptions = {
+        timeZone: 'America/New_York',
+        hour12: false,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+    const clockElement = document.getElementById("clock");
+    function updateTime() {
+        // getting the current time wiht options from the js api
+        const currentTimeEST = new Date().toLocaleString('en-US', timeOptions);
+        clockElement.innerText = currentTimeEST;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    let isOn = true;
+    const toggleElement = document.getElementById("onOff");
+    const tempElement = document.getElementById("temperature");
+    const browserElement = document.getElementById("browser");
+
+    function togglePower() {
+        isOn = !isOn;
+        if (isOn) {
+            toggleElement.innerText = "Turn Off";
+            toggleElement.style.borderColor = "firebrick";
+            browserElement.style.display = "block";
+            tempElement.style.display = "block";
+        } else {
+            toggleElement.innerText = "Turn On";
+            toggleElement.style.borderColor = "green";
+            browserElement.style.display = "none";
+            tempElement.style.display = "none";
+        }
+    }
+
+    let isFridgeClosed = true;
+    const openedFridge = document.getElementById("openedFridge");
+
+    function toggleFridge() {
+        isFridgeClosed = !isFridgeClosed;
+        if (isFridgeClosed) {
+            openedFridge.style.display = "block";
+        } else {
+            openedFridge.style.display = "none";
+        }
+    }
+</script>
+
+</html>
