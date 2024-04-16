@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Lots",
+        "path": "lots.html"
+    },
+    {
+        "name": "Tickets",
+        "path": "tickets.html"
+    },
+    {
+        "name": "Events",
+        "path": "lots.html"
+    },
+    {
+        "name": "Help",
+        "path": "help.html"
+    }
+]
