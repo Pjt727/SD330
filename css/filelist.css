@@ -1,3 +1,21 @@
+body {
+    background-image: url("https://a.storyblok.com/f/191576/2400x1260/0ae613f6df/red-backgrounds.png");
+}
+
 .float-left {
     float: left;
+    padding-right: 30px;
+}
+
+.container {
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
 }
