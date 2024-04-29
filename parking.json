@@ -10,6 +10,7 @@
             "isMonitoredByCameras": true,
             "lots": [
                 {
+                    "number": "001",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -17,6 +18,7 @@
                     "endReserveDate": "04/29/2024"
                 },
                 {
+                    "number": "002",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -24,6 +26,7 @@
                     "endReserveDate": "06/29/2024"
                 },
                 {
+                    "number": "003",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "available",
@@ -31,6 +34,7 @@
                     "endReserveDate": ""
                 },
                 {
+                    "number": "004",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -38,6 +42,7 @@
                     "endReserveDate": "09/29/2024"
                 },
                 {
+                    "number": "005",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "filled",
@@ -45,6 +50,7 @@
                     "endReserveDate": ""
                 },
                 {
+                    "number": "006",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -52,6 +58,7 @@
                     "endReserveDate": "04/14/2024"
                 },
                 {
+                    "number": "007",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -59,6 +66,7 @@
                     "endReserveDate": "04/29/2024"
                 },
                 {
+                    "number": "007",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
@@ -66,6 +74,7 @@
                     "endReserveDate": "04/29/2024"
                 },
                 {
+                    "number": "008",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "avaliable",
@@ -73,6 +82,7 @@
                     "endReserveDate": "04/29/2024"
                 },
                 {
+                    "number": "009",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
                     "status": "filled",
@@ -80,6 +90,7 @@
                     "endReserveDate": ""
                 },
                 {
+                    "number": "010",
                     "isHandicap": false,
                     "tags": ["Security"], 
                     "status": "reserved",
@@ -87,6 +98,15 @@
                     "endReserveDate": "04/29/2024"
                 },
                 {
+                    "number": "011",
+                    "isHandicap": true,
+                    "tags": ["Faculty/Staff"], 
+                    "status": "reserved",
+                    "openSince": "",
+                    "endReserveDate": "04/29/2024"
+                },
+                {
+                    "number": "012",
                     "isHandicap": true,
                     "tags": ["Faculty/Staff"], 
                     "status": "reserved",
