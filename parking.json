@@ -77,7 +77,7 @@
                     "number": "008",
                     "isHandicap": false,
                     "tags": ["Faculty/Staff"], 
-                    "status": "avaliable",
+                    "status": "available",
                     "openSince": "04/28/2024",
                     "endReserveDate": "04/29/2024"
                 },
@@ -153,10 +153,10 @@
             "name": "Beck West",
             "imagePath": "lotFoy.png",
             "totalSpaces": "200",
-            "comments": "This lot is located by the Allied Health building and is the main parking lot for commuters due to its size. Still, other studetns and faculty may utilize it",
+            "comments": "This lot is located by the Allied Health building and is the main parking lot for commuters due to its size. Still, other students and faculty may utilize it",
             "parkingTags": ["Residential Students", "Commuter Students", "Faculty/Staff"],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true
-        },
+        }
     ]
 }
