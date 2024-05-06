@@ -2,17 +2,21 @@
     "lots": [
         {
             "name": "Foy",
-            "imagePath": "lotFoy.png",
+            "imagePath": "assets/lotFoy.jpg",
             "totalSpaces": "75",
             "comments": "The foy lot is located closer to the river side of the river. The Foy lots are designated for Faculty/Staff parking only. All unregistered or student vehicles will be cited.",
-            "parkingTags": ["Faculty/Staff"],
+            "parkingTags": [
+                "Faculty/Staff"
+            ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true,
             "lots": [
                 {
                     "number": "001",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "04/28/2024",
                     "endReserveDate": "04/29/2024"
@@ -20,7 +24,9 @@
                 {
                     "number": "002",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "04/31/2024",
                     "endReserveDate": "06/29/2024"
@@ -28,7 +34,9 @@
                 {
                     "number": "003",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "available",
                     "openSince": "04/23/2024",
                     "endReserveDate": ""
@@ -36,7 +44,9 @@
                 {
                     "number": "004",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "03/28/2024",
                     "endReserveDate": "09/29/2024"
@@ -44,7 +54,9 @@
                 {
                     "number": "005",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "filled",
                     "openSince": "",
                     "endReserveDate": ""
@@ -52,7 +64,9 @@
                 {
                     "number": "006",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "03/31/2024",
                     "endReserveDate": "04/14/2024"
@@ -60,7 +74,9 @@
                 {
                     "number": "007",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "",
                     "endReserveDate": "04/29/2024"
@@ -68,7 +84,9 @@
                 {
                     "number": "007",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "",
                     "endReserveDate": "04/29/2024"
@@ -76,7 +94,9 @@
                 {
                     "number": "008",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "available",
                     "openSince": "04/28/2024",
                     "endReserveDate": "04/29/2024"
@@ -84,7 +104,9 @@
                 {
                     "number": "009",
                     "isHandicap": false,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "filled",
                     "openSince": "",
                     "endReserveDate": ""
@@ -92,7 +114,9 @@
                 {
                     "number": "010",
                     "isHandicap": false,
-                    "tags": ["Security"], 
+                    "tags": [
+                        "Security"
+                    ],
                     "status": "reserved",
                     "openSince": "",
                     "endReserveDate": "04/29/2024"
@@ -100,7 +124,9 @@
                 {
                     "number": "011",
                     "isHandicap": true,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "",
                     "endReserveDate": "04/29/2024"
@@ -108,7 +134,9 @@
                 {
                     "number": "012",
                     "isHandicap": true,
-                    "tags": ["Faculty/Staff"], 
+                    "tags": [
+                        "Faculty/Staff"
+                    ],
                     "status": "reserved",
                     "openSince": "",
                     "endReserveDate": "04/29/2024"
@@ -117,8 +145,13 @@
         },
         {
             "name": "Steel Plant",
-            "imagePath": "lotSteelPlant.png",
+            "imagePath": "assets/lotSteelPlant.jpg",
             "totalSpaces": "15",
+            "parkingTags": [
+                "Residential Students",
+                "Commuter Students",
+                "Faculty/Staff"
+            ],
             "comments": "The Steel Plant parking lot is next to the the main fashion department building. This is mainly for Faculty/Staff or commuters",
             "fineAmountInUsd": 80,
             "isMonitoredByCameras": true
@@ -128,7 +161,11 @@
             "imagePath": "lotDonnelly.png",
             "totalSpaces": "40",
             "comments": "Donnelly lot is next to Tenney Stadium and its building. Faculty/Staff are the only group permitted on week days but students may park during quieter times.",
-            "parkingTags": ["Residential Students", "Commuter Students", "Faculty/Staff"],
+            "parkingTags": [
+                "Residential Students",
+                "Commuter Students",
+                "Faculty/Staff"
+            ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true
         },
@@ -137,7 +174,9 @@
             "imagePath": "lotFontaine.png",
             "totalSpaces": "42",
             "comments": "The Fontaine lot will be available for residential students for the spring semester. This is subject to change given the demands placed upon the lot. Faculty and staff that have historically parked in Fontaine, are being asked to park in either the Dyson Lot or the Foy Lot.",
-            "parkingTags": ["Residential Students"],
+            "parkingTags": [
+                "Residential Students"
+            ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": false
         },
@@ -154,7 +193,11 @@
             "imagePath": "lotFoy.png",
             "totalSpaces": "200",
             "comments": "This lot is located by the Allied Health building and is the main parking lot for commuters due to its size. Still, other students and faculty may utilize it",
-            "parkingTags": ["Residential Students", "Commuter Students", "Faculty/Staff"],
+            "parkingTags": [
+                "Residential Students",
+                "Commuter Students",
+                "Faculty/Staff"
+            ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true
         }
