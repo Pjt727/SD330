@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const lotName = searchParams.get("lot");
   let givenLotData;
   for (const lotData of lotsData["lots"]) {
-    console.log(lotData["name"]);
-    console.log(lotName);
     if (lotData["name"] == lotName) {
       givenLotData = lotData;
       break;
@@ -62,7 +60,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     sorryMessage.innerText =
       "Sorry there are no spots for this lot yet! (Try Foy)";
     lotContainer.appendChild(sorryMessage);
-    console.log("hi");
     return;
   }
 

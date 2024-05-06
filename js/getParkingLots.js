@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     lotTitleContainer.appendChild(lotTitle);
     lotTitleContainer.innerHTML += "&nbsp;&nbsp;";
     for (const tag of lotData["parkingTags"]) {
-      console.log(tag);
       lotTitleContainer.innerHTML += parkingTagToHtml[tag];
       lotTitleContainer.innerHTML += "&nbsp;";
     }
