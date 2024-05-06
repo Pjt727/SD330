@@ -11,53 +11,107 @@ const parkingTagToHtml = {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const lots = document.getElementById("lots");
-
-  const parkingData = await getParkingJson();
-  const lotsData = parkingData["lots"];
-  for (const lotData of lotsData) {
-    const lot = document.createElement("div");
-    lot.className = "lot";
-
-    const lotText = document.createElement("div");
-    lotText.className = "lotText";
-    const lotTitleContainer = document.createElement("h2");
-    const lotTitle = document.createElement("a");
-    lotTitle.className = "lotTitle";
-
-    lotTitle.href = `lot.html?lot=${lotData["name"].replace(/ /g, "+")}`;
-    lotTitle.innerText = lotData["name"];
-    lotTitleContainer.appendChild(lotTitle);
-    lotTitleContainer.innerHTML += "&nbsp;&nbsp;";
-    for (const tag of lotData["parkingTags"]) {
-      console.log(tag);
-      lotTitleContainer.innerHTML += parkingTagToHtml[tag];
-      lotTitleContainer.innerHTML += "&nbsp;";
+  const lotsData = await getParkingJson();
+  const searchParams = new URLSearchParams(window.location.search);
+  const lotName = searchParams.get("lot");
+  let givenLotData;
+  for (const lotData of lotsData["lots"]) {
+    console.log(lotData["name"]);
+    console.log(lotName);
+    if (lotData["name"] == lotName) {
+      givenLotData = lotData;
+      break;
     }
-    lotText.appendChild(lotTitleContainer);
-    const lotComments = document.createTextNode(lotData["comments"]);
-    lotText.appendChild(lotComments);
-    const breakLine = document.createElement("br");
-    lotText.appendChild(breakLine);
-    const capacity = document.createElement("strong");
-    availableSpots = 0;
-    if ("spots" in lotData) {
-      for (let spot of lotData["spots"]) {
-        if (spot["status"] == "available") {
-          availableSpots += 1;
-        }
+  }
+  const lotContainer = document.getElementById("lotContainer");
+  const lotImage = document.getElementById("lotImage");
+  const lotTitle = document.getElementById("lotTitle");
+  const lotComments = document.getElementById("lotComments");
+  const tags = document.getElementById("tags");
+  const capacity = document.getElementById("capacity");
+  const fine = document.getElementById("fineAmount");
+  const monitored = document.getElementById("monitored");
+
+  lotImage.src = givenLotData["imagePath"];
+  lotTitle.innerText = givenLotData["name"];
+  lotComments.innerText = givenLotData["comments"];
+  fine.innerText = `$${givenLotData["fineAmountInUsd"]} dollar fine`;
+  if (givenLotData["isMonitoredByCameras"]) {
+    monitored.innerText = `Is monitored by cameras`;
+  } else {
+    monitored.innerText = `Is not monitored by cameras`;
+  }
+  lotTitle.innerHTML += "&nbsp;";
+  for (const tag of givenLotData["parkingTags"]) {
+    tags.innerText += tag + " ";
+    lotTitle.innerHTML += parkingTagToHtml[tag];
+    lotTitle.innerHTML += "&nbsp;";
+  }
+
+  availableSpots = 0;
+  if ("spots" in givenLotData) {
+    for (let spot of givenLotData["spots"]) {
+      if (spot["status"] == "available") {
+        availableSpots += 1;
       }
     }
-    capacity.innerText = `(${lotData["totalSpaces"] - availableSpots}/${lotData["totalSpaces"]}) spaces available`;
-    lotText.appendChild(capacity);
-    lot.appendChild(lotText);
-    const lotImage = document.createElement("img");
-    lotImage.className = "lotImage";
-    lotImage.src = lotData["imagePath"];
-    lotImage.alt = lotData["name"];
-    lotImage.width = "200";
-    lot.appendChild(lotImage);
+  }
+  capacity.innerText = `(${givenLotData["totalSpaces"] - availableSpots}/${givenLotData["totalSpaces"]}) spaces available`;
+  if (!givenLotData["spots"]) {
+    const sorryMessage = document.createElement("h2");
+    sorryMessage.innerText =
+      "Sorry there are no spots for this lot yet! (Try Foy)";
+    lotContainer.appendChild(sorryMessage);
+    console.log("hi");
+    return;
+  }
 
-    lots.appendChild(lot);
+  for (let spot of givenLotData["spots"]) {
+    const spotElement = document.createElement("div");
+    spotElement.className = "spot";
+    const spotTitle = document.createElement("h3");
+    spotTitle.innerText = spot["number"];
+    for (const tag of spot["tags"]) {
+      spotTitle.innerHTML += parkingTagToHtml[tag];
+      spotTitle.innerHTML += "&nbsp;";
+    }
+    spotElement.appendChild(spotTitle);
+
+    const reserveLink = document.createElement("a");
+    if (spot["status"] == "available") {
+      reserveLink.href = "page404.html";
+      reserveLink.innerText = "Reserve";
+    } else {
+      reserveLink.className = "disabled";
+      reserveLink.innerText = "Reserved";
+    }
+    spotElement.appendChild(reserveLink);
+
+    const attributeList = document.createElement("ul");
+    attributeList.className = "spotAttributes";
+    const statusAttribute = document.createElement("li");
+    statusAttribute.innerText = spot["status"];
+    attributeList.appendChild(statusAttribute);
+    if (spot["isHandicap"]) {
+      const handicapAttribute = document.createElement("li");
+      handicapAttribute.innerText = "Is not handicap";
+      attributeList.appendChild(handicapAttribute);
+    } else {
+      const handicapAttribute = document.createElement("li");
+      handicapAttribute.innerText = "Is not handicap";
+      attributeList.appendChild(handicapAttribute);
+    }
+    if (spot["openSince"]) {
+      const openSinceAttribute = document.createElement("li");
+      openSinceAttribute.innerText = `open since ${spot["openSince"]}`;
+      attributeList.appendChild(openSinceAttribute);
+    }
+    if (spot["endReserveDate"]) {
+      const endReserverAttribute = document.createElement("li");
+      endReserverAttribute.innerText = `reserved since ${spot["endReserveDate"]}`;
+      attributeList.appendChild(endReserverAttribute);
+    }
+    spotElement.appendChild(attributeList);
+    lotContainer.appendChild(spotElement);
   }
 });

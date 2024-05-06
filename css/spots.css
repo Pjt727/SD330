@@ -1,0 +1,41 @@
+#lotContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#lotImage {
+    border-radius: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#lotInfo {
+    width: 30%;
+    float: left;
+    display: inline-block;
+    height: 1000px;
+}
+
+.spot {
+    display: inline-block;
+    border: 4px solid #ff9999;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    float: left;
+    margin: 5px;
+    min-height: 200px;
+    min-width: 200px;
+    background-color: white;
+}
+
+.spotAttributes {
+    display: block;
+    margin-left: -10px;
+    text-align: left;
+}
+
+.disabled {
+    color: grey;
+    text-decoration: underline;
+}
