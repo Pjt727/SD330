@@ -10,7 +10,7 @@
             ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true,
-            "lots": [
+            "spots": [
                 {
                     "number": "001",
                     "isHandicap": false,
@@ -158,7 +158,7 @@
         },
         {
             "name": "Donnelly",
-            "imagePath": "lotDonnelly.png",
+            "imagePath": "assets/lotDonnelly.jpg",
             "totalSpaces": "40",
             "comments": "Donnelly lot is next to Tenney Stadium and its building. Faculty/Staff are the only group permitted on week days but students may park during quieter times.",
             "parkingTags": [
@@ -171,7 +171,7 @@
         },
         {
             "name": "Fontaine",
-            "imagePath": "lotFontaine.png",
+            "imagePath": "assets/lotFontaine.jpg",
             "totalSpaces": "42",
             "comments": "The Fontaine lot will be available for residential students for the spring semester. This is subject to change given the demands placed upon the lot. Faculty and staff that have historically parked in Fontaine, are being asked to park in either the Dyson Lot or the Foy Lot.",
             "parkingTags": [
@@ -182,15 +182,20 @@
         },
         {
             "name": "Midrise",
-            "imagePath": "lotMidrise.png",
+            "imagePath": "assets/lotMidrise.jpg",
             "totalSpaces": "60",
             "comments": "The Midrise lot will be available for both residential and commuter students this spring. This has historically been a visitor lot utilized by Admissions. They have graciously moved the admissions operations to McCann for the semester.",
+            "parkingTags": [
+                "Residential Students",
+                "Commuter Students",
+                "Faculty/Staff"
+            ],
             "fineAmountInUsd": 50,
             "isMonitoredByCameras": true
         },
         {
             "name": "Beck West",
-            "imagePath": "lotFoy.png",
+            "imagePath": "assets/lotBeck.jpg",
             "totalSpaces": "200",
             "comments": "This lot is located by the Allied Health building and is the main parking lot for commuters due to its size. Still, other students and faculty may utilize it",
             "parkingTags": [
